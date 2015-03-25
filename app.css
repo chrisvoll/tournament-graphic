@@ -1,0 +1,80 @@
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    background: #EEE;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    width: 100%;
+    height: 1000px;
+    margin: 0 auto;
+    position: relative;
+}
+.canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.round {
+    display: flex;
+    flex: 0 0 120px;
+    height: 120px;
+    margin-bottom: 23px;
+    justify-content: center;
+    align-self: center;
+    position: relative;
+    z-index: 1;
+}
+.round:nth-child(1) { width: 100%; }
+.round:nth-child(2) { width:  65%; }
+.round:nth-child(3) { width:  42%; }
+.round:nth-child(4) { width:  27%; }
+.round:nth-child(5) { width:  18%; }
+.round:nth-child(6) { width:  11%; }
+.round:nth-child(7) { width:   7%; }
+.round .team {
+    position: relative;
+    flex: 1 1 auto;
+    height: 100%;
+    width: 1.5625%;
+    cursor: pointer;
+    box-shadow: inset 110px 0 rgba(255, 255, 255, 0);
+    transition: box-shadow .15s, width .15s ease-out;
+}
+.round .team.hover {
+    width: 60px;
+    box-shadow: inset 110px 0 rgba(255, 255, 255, .2);
+}
+.round .team.active {
+    box-shadow: inset 110px 0 rgba(255, 255, 255, .4);
+}
+.round .team .name-container {
+    pointer-events: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 110px;
+    height: 50px;
+    margin: -25px 0 0 -55px;
+    transform: rotate(-90deg);
+    color: #FFF;
+    font: 600 12px 'Source Sans Pro', Helvetica Neue, Helvetica, sans-serif;
+    text-transform: uppercase;
+    text-align: center;
+    transition: .15s opacity;
+    opacity: 0;
+    display: flex;
+    align-items: center;
+}
+.round .team .name {
+    flex: 1 1 auto;
+}
+.round .team.hover .name-container {
+    opacity: .2;
+}
+.round .team.hover:hover .name-container {
+    opacity: 1;
+}
